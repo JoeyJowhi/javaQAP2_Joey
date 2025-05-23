@@ -12,6 +12,7 @@ public class Money {
         this.cents = (long) amount % 100;
     }
 
+    //Task #1
     public Money(Money otherObject) {
         this.dollars = otherObject.dollars;
         this.cents = otherObject.cents;
