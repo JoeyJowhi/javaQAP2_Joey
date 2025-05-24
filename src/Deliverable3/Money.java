@@ -22,11 +22,10 @@ public class Money {
     //Instance Methods
     public Money add(Money otherAmount) {
         this.dollars += otherAmount.dollars;
-        if (this.cents + otherAmount.cents >= 100) {
-            this.dollars += (int) otherAmount.cents / 100;
-            this.cents = otherAmount.cents % 100;
-        } else {
-            this.cents += otherAmount.cents;
+        this.cents += otherAmount.cents;
+        if (this.cents >= 100) {
+            this.dollars += this.cents / 100;
+            this.cents = this.cents % 100;
         }
 
         return this;
@@ -35,6 +34,11 @@ public class Money {
     public Money subtract(Money otherAmount) {
         this.dollars -= otherAmount.dollars;
         this.cents -= otherAmount.cents;
+        if (this.cents < 0) {
+            this.dollars -= (Math.abs(this.cents) + 99) / 100;
+            this.cents += (Math.abs(this.cents) + 99) * 100;
+        }
+
         return this;
     }
 

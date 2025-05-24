@@ -22,6 +22,7 @@ public class CreditCard {
     }
 
     public void payment(Money amount) {
+        this.balance.subtract(amount);
     }
 
 
