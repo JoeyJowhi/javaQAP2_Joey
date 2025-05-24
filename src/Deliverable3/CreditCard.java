@@ -16,13 +16,21 @@ public class CreditCard {
 
     //Instance Methods
     public void charge(Money amount) {
-        if (Double.parseDouble(this.balance.add(amount).toString()) > Double.parseDouble(this.creditLimit.toString())) {
+        if ((Double.parseDouble(this.balance.toString()) + Double.parseDouble(amount.toString())) < Double.parseDouble(this.creditLimit.toString())) {
             this.balance.add(amount);
+            System.out.println("Charge: " + amount.toDisplayString());
+        } else {
+            System.out.println("\n\n   Error: If this amount were charged to the current balance, the credit limit would be exceeded.\n\n");
         }
     }
 
     public void payment(Money amount) {
-        this.balance.subtract(amount);
+        if ((Double.parseDouble(this.balance.toString()) - Double.parseDouble(amount.toString())) > 0) {
+            this.balance.subtract(amount);
+            System.out.println("Payment: " + amount.toDisplayString());
+        } else {
+            System.out.println("\n\n   Error: If this payment were taken from the current balance, the balance would be below zero.\n\n");
+        }
     }
 
 

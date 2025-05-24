@@ -8,11 +8,10 @@ public class Money {
 
     //Constructors
     public Money(double amount) {
-        this.dollars = (long) amount / 100;
-        this.cents = (long) amount % 100;
+        this.dollars = Math.round(amount * 100) / 100;
+        this.cents = Math.round(amount * 100) % 100;
     }
 
-    //Task #1
     public Money(Money otherObject) {
         this.dollars = otherObject.dollars;
         this.cents = otherObject.cents;
@@ -35,15 +34,15 @@ public class Money {
         this.dollars -= otherAmount.dollars;
         this.cents -= otherAmount.cents;
         if (this.cents < 0) {
-            this.dollars -= (Math.abs(this.cents) + 99) / 100;
-            this.cents += (Math.abs(this.cents) + 99) * 100;
+            this.dollars -= 1;
+            this.cents += 100;
         }
 
         return this;
     }
 
     public int compareTo(Money otherObject) {
-        return Double.compare(Double.parseDouble(this.toString()), Double.parseDouble(this.toString()));
+        return Double.compare(Double.parseDouble(this.toString()), Double.parseDouble(otherObject.toString()));
     }
 
     public boolean equals(Money otherObject) {
@@ -52,5 +51,9 @@ public class Money {
 
     public String toString() {
         return String.format("%d.%d", this.dollars, this.cents);
+    }
+
+    public String toDisplayString() {
+        return String.format("$%,d.%02d", this.dollars, this.cents);
     }
 }

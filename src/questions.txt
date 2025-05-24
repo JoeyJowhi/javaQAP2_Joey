@@ -1,0 +1,23 @@
+1. How many hours did it take you to complete this assessment? (Please keep try to keep track of how many hours you have spent working on each individual part of this assessment as best you can - an estimation is fine; we just want a rough idea.)
+
+Answer: It took me roughly seven hours to complete everything within QAP and to format things to my standards.
+
+
+2. What online resources you have used? (My lectures, YouTube, Stack overflow etc.)
+
+Answer: I used my usual acquaintances of w3Schools and Stack Overflow. With the occasional dip into a reddit thread if it pertained to my current search.
+
+
+3. Did you need to ask any of your friends in solving the problems. (If yes, please mention name of the friend. They must be amongst your class fellows.)
+
+Answer: There were certainly some issues I could have inquired about to my colleagues for assistance alas, I personally prefer to seek answers by my lonesome. Trial and error, if you will.
+
+
+4. Did you need to ask questions to any of your instructors? If so, how many questions did you ask (or how many help sessions did you require)?
+
+Answer: For the reason I previously relayed, I have not sought out the help of my knowledgeable instructors either.
+
+
+5. Rate (subjectively) the difficulty of each question from your own perspective, and whether you feel confident that you can solve a similar but different problem requiring some of the same techniques in the future now that you’ve completed this one.
+
+Answer: The rating I bestow upon this assignment utilizing a scaling metric of whole integers from one to ten, I indubitably grant a five out of ten. While there is no doubt some areas provided a challenge (Mainly concerning the content of Deliverable 3), I found myself able to overcome these obstacles in an amount of time not unordinary.
