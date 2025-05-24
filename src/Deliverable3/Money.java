@@ -22,7 +22,13 @@ public class Money {
     //Instance Methods
     public Money add(Money otherAmount) {
         this.dollars += otherAmount.dollars;
-        this.cents += otherAmount.cents;
+        if (this.cents + otherAmount.cents >= 100) {
+            this.dollars += (int) otherAmount.cents / 100;
+            this.cents = otherAmount.cents % 100;
+        } else {
+            this.cents += otherAmount.cents;
+        }
+
         return this;
     }
 
@@ -33,10 +39,7 @@ public class Money {
     }
 
     public int compareTo(Money otherObject) {
-        double amt1 = Double.parseDouble(this.dollars + "." + this.cents);
-        double amt2 = Double.parseDouble(otherObject.dollars + "." + otherObject.cents);
-
-        return Double.compare(amt1, amt2);
+        return Double.compare(Double.parseDouble(this.toString()), Double.parseDouble(this.toString()));
     }
 
     public boolean equals(Money otherObject) {
@@ -44,6 +47,6 @@ public class Money {
     }
 
     public String toString() {
-        return String.format("$%,d.%d", this.dollars, this.cents);
+        return String.format("%d.%d", this.dollars, this.cents);
     }
 }

@@ -11,27 +11,27 @@ public class CreditCard {
         this.balance = new Money(0);
         this.creditLimit = limit;
         this.owner = newCardHolder;
-
     }
 
 
     //Instance Methods
     public void charge(Money amount) {
-
+        if (Double.parseDouble(this.balance.add(amount).toString()) > Double.parseDouble(this.creditLimit.toString())) {
+            this.balance.add(amount);
+        }
     }
 
     public void payment(Money amount) {
-
     }
 
 
     //Getter Methods
     public Money getBalance() {
-        return this.balance;
+        return new Money(this.balance);
     }
 
     public Money getCreditLimit() {
-        return this.creditLimit;
+        return new Money(this.creditLimit);
     }
 
     public String getPersonals() {
